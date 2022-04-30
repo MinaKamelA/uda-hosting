@@ -67,6 +67,6 @@ jobs:
 workflows:
   udagram:
     jobs:
-      -build
-      -test
-      -deploy
+      - build
+      - test
+      - deploy
