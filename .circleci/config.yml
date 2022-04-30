@@ -12,7 +12,7 @@ jobs:
           node-version: '16.13'
       - checkout
       - aws-cli/setup
-      - eb/setup
+      - aws-elastic-beanstalk/setup
       - run:
           name: configure eb
           command: |
