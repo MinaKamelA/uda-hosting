@@ -56,7 +56,7 @@ jobs:
             npm run frontend:e2e
   deploy:
     docker:
-      - image: 'cimg/base:stable'
+      - image: 'cimg/base:stable--browsers'
     steps:
       - node/install:
           node-version: '16.13'
