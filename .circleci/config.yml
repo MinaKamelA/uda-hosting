@@ -39,6 +39,9 @@ jobs:
     docker:
       - image: 'cimg/base:stable'
     steps:
+      - node/install:
+          node-version: '16.13'
+      - checkout
       - run:
           name: Test front-end
           command: |
@@ -51,6 +54,9 @@ jobs:
     docker:
       - image: 'cimg/base:stable'
     steps:
+      - node/install:
+          node-version: '16.13'
+      - checkout
       - run:
           name: Deploy frontend
           command: |
