@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "backend:install": "cd udagram-backend && npm install && cd ..",
+        "backend:install": "cd udagram-api && npm install && cd ..",
         "backend:start": "cd udagram-api && npm run start && cd ..",
         "backend:tsc": "cd udagram-api && npm run tsc && cd ..",
         "backend:dev": "cd udagram-api && npm run dev && cd ..",
