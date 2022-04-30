@@ -43,6 +43,10 @@ jobs:
           node-version: '16.13'
       - checkout
       - run:
+         name: Install front-end dependencies
+         command: |
+            npm run frontend:install
+      - run:
           name: Test front-end
           command: |
             npm run frontend:test
@@ -57,6 +61,14 @@ jobs:
       - node/install:
           node-version: '16.13'
       - checkout
+      - run:
+         name: Install front-end dependencies
+         command: |
+            npm run frontend:install
+      - run:
+          name: Install back-end dependencies
+          command: |
+            npm run backend:install
       - run:
           name: Deploy frontend
           command: |
