@@ -9,7 +9,7 @@
     "dev": "nodemon ./src/server.ts",
     "prod": "tsc && node ./www/server.js",
     "clean": "npx rimraf www/ || true",
-    "copy":"cp \"./src/config\" \"./www/config\" && cp .npmrc \"./www/.npmrc\" && cp package.json \"./www/package.json\"",
+    "copy":"cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json",
     "build": "npm run clean && tsc && npm run copy && cd www && zip -r Archive.zip . && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
