@@ -64,12 +64,13 @@ jobs:
           command: |
             eb deploy
 workflows:
+  version: 2
   udagram:
     jobs:
       - build
       - test:
-        requires:
-          - build
+          requires:
+            - build
       - deploy:
-        requires:
-          - test
+          requires:
+            - test
