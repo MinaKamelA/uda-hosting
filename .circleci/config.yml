@@ -17,6 +17,7 @@ jobs:
           name: configure eb
           command: |
             cd udagram-api
+            eb init udagram-api --platform node.js --region us-east-1
             eb use udagram-api-dev
       - run:
          name: Install front-end dependencies
