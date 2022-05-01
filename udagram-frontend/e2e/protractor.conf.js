@@ -11,7 +11,7 @@ exports.config = {
   capabilities: {
     'browserName': 'chrome',
     'chromeOptions': {
-      'args': ['no-sandbox']
+      'args': ['no-sandbox', 'disable-gpu', 'disable-setuid-sandbox']
     }
   },
   directConnect: true,
