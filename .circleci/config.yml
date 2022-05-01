@@ -47,7 +47,7 @@ jobs:
             npm run frontend:test
   deploy:
     docker:
-      - image: 'cimg/base:stable-browsers'
+      - image: 'cimg/base:stable'
     steps:
       - node/install:
           node-version: '16.13'
