@@ -45,10 +45,6 @@ jobs:
           name: Test front-end
           command: |
             npm run frontend:test
-      - run:
-          name: Test front-end e2e
-          command: |
-            npm run frontend:e2e
   deploy:
     docker:
       - image: 'cimg/base:stable-browsers'
