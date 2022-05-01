@@ -25,13 +25,20 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['ChromeHeadlessNoSandbox'],
     customLaunchers: {
-      Chrome_no_sandbox: {
-        base: 'Chrome',
-        flags: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu'] // for running within Docker
+      ChromeHeadlessNoSandbox: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox']
       }
     },
+    // browsers: ['Chrome'],
+    // customLaunchers: {
+    //   Chrome_no_sandbox: {
+    //     base: 'Chrome',
+    //     flags: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu'] // for running within Docker
+    //   }
+    // },
     singleRun: false
   });
 };

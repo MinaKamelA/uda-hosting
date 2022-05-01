@@ -9,11 +9,17 @@ exports.config = {
     './src/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    'browserName': 'chrome',
+    'browserName': 'ChromeHeadlessNoSandbox',
     'chromeOptions': {
-      'args': ['no-sandbox', 'disable-gpu', 'disable-setuid-sandbox']
+      'args': ['no-sandbox']
     }
   },
+  // capabilities: {
+  //   'browserName': 'chrome',
+  //   'chromeOptions': {
+  //     'args': ['no-sandbox', 'disable-gpu', 'disable-setuid-sandbox']
+  //   }
+  // },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
   framework: 'jasmine',

@@ -43,7 +43,6 @@ jobs:
       - node/install:
           node-version: '16.13'
       - checkout
-      - browser-tools/install-browser-tools
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
       - run:
