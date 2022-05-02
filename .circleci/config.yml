@@ -51,7 +51,7 @@ jobs:
       - persist_to_workspace:
           root: udagram-api
           paths:
-            - www
+            - www/Archive.zip
   test:
     docker:
       - image: 'cimg/base:stable'
