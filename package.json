@@ -8,7 +8,8 @@
         "frontend:test": "cd udagram-frontend && npm run test",
         "frontend:lint": "cd udagram-frontend && npm run lint",
         "frontend:e2e": "cd udagram-frontend && npm run e2e",
-        "frontend:deploy": "cd udagram-frontend && npm run deploy"
+        "frontend:deploy": "cd udagram-frontend && npm run deploy",
+        "enter": "cd udagram-frontend"
     },
     "devDependencies": {}
 }

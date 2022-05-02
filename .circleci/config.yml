@@ -12,10 +12,6 @@ jobs:
       - node/install:
           node-version: '16.13'
       - checkout
-      - run:
-          name: enter www frontend
-          command: |
-            cd hjhjhjhjh
       - restore_cache:
           keys:
             - frontend-dependencies{{ checksum "udagram-frontend/package.json" }}
@@ -91,12 +87,9 @@ jobs:
       - attach_workspace:
           at: udagram-frontend
       - run:
-          name: enter www frontend
-          command: |
-            cd udagram-frontend/www
-      - run:
           name: Deploy frontend
           command: |
+            cd www
             npm run frontend:deploy
       - run:
           name: configure eb
