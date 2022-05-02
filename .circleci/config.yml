@@ -117,6 +117,10 @@ jobs:
             - frontend-dependencies{{ checksum "udagram-frontend/package.json" }}
             - frontend-dependencies
       - run:
+          name: Start back-end
+          command: |
+            npm run backend:start
+      - run:
           name: e2e test
           command: |
             npm run frontend:e2e
