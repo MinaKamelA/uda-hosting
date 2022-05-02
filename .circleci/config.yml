@@ -12,14 +12,28 @@ jobs:
       - node/install:
           node-version: '16.13'
       - checkout
+      - restore_cache:
+          keys:
+            - frontend-dependencies{{ checksum "udagram-frontend/package.json" }}
+            - frontend-dependencies
       - run:
          name: Install front-end dependencies
          command: |
             npm run frontend:install
+      - save_cache:
+          paths:
+            - udagram-frontend/node_modules
+      - restore_cache:
+          keys:
+            - backend-dependencies{{ checksum "udagram-api/package.json" }}
+            - backend-dependencies
       - run:
           name: Install back-end dependencies
           command: |
             npm run backend:install
+      - save_cache:
+          paths:
+            - udagram-api/node_modules
       - run:
          name: Build front-end
          command: |
