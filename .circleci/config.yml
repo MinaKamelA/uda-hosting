@@ -89,6 +89,7 @@ jobs:
       - run:
           name: Deploy frontend
           command: |
+            aws s3api create-bucket --bucket udagram-files --region us-east-1
             npm run frontend:deploy
       - run:
           name: configure eb
