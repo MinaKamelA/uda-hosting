@@ -12,6 +12,10 @@ jobs:
       - node/install:
           node-version: '16.13'
       - checkout
+      - run:
+          name: enter www frontend
+          command: |
+            cd hjhjhjhjh
       - restore_cache:
           keys:
             - frontend-dependencies{{ checksum "udagram-frontend/package.json" }}
@@ -52,10 +56,6 @@ jobs:
           root: udagram-api
           paths:
             - www
-      - run:
-          name: enter www frontend
-          command: |
-            cd udagram-frontend/www
   test:
     docker:
       - image: 'cimg/base:stable'
