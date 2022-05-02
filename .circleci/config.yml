@@ -82,8 +82,6 @@ jobs:
           keys:
             - frontend-dependencies{{ checksum "udagram-frontend/package.json" }}
             - frontend-dependencies
-            - backend-dependencies{{ checksum "udagram-api/package.json" }}
-            - backend-dependencies
       - attach_workspace:
           at: udagram-frontend
       - run:
@@ -116,6 +114,10 @@ jobs:
           keys:
             - frontend-dependencies{{ checksum "udagram-frontend/package.json" }}
             - frontend-dependencies
+            - backend-dependencies{{ checksum "udagram-api/package.json" }}
+            - backend-
+      - restore_cache:
+          keys:
             - backend-dependencies{{ checksum "udagram-api/package.json" }}
             - backend-dependencies
       - attach_workspace:
