@@ -90,7 +90,7 @@ jobs:
           name: Deploy frontend
           command: |
             npm run enter
-            cd www
+            cd udagram-frontend/www
             npm run frontend:deploy
       - run:
           name: configure eb
