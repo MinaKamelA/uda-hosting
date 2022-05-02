@@ -53,10 +53,18 @@ jobs:
       - checkout
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
+      - restore_cache:
+          keys:
+            - frontend-dependencies{{ checksum "udagram-frontend/package.json" }}
+            - frontend-dependencies
       - run:
          name: Install front-end dependencies
          command: |
             npm run frontend:install
+      - save_cache:
+          paths:
+            - udagram-frontend/node_modules
+          key: frontend-dependencies
       - run:
           name: Test front-end
           command: |
@@ -70,14 +78,30 @@ jobs:
       - checkout
       - aws-cli/setup
       - aws-elastic-beanstalk/setup
+      - restore_cache:
+          keys:
+            - frontend-dependencies{{ checksum "udagram-frontend/package.json" }}
+            - frontend-dependencies
       - run:
          name: Install front-end dependencies
          command: |
             npm run frontend:install
+      - save_cache:
+          paths:
+            - udagram-frontend/node_modules
+          key: frontend-dependencies
+      - restore_cache:
+          keys:
+            - backend-dependencies-{{ checksum "udagram-api/package.json" }}
+            - backend-dependencies-
       - run:
           name: Install back-end dependencies
           command: |
             npm run backend:install
+      - save_cache:
+          paths:
+            - udagram-api/node_modules
+          key: backend-dependencies
       - run:
           name: Deploy frontend
           command: |
@@ -101,10 +125,18 @@ jobs:
       - checkout
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
+      - restore_cache:
+          keys:
+            - frontend-dependencies{{ checksum "udagram-frontend/package.json" }}
+            - frontend-dependencies
       - run:
          name: Install front-end dependencies
          command: |
             npm run frontend:install
+      - save_cache:
+          paths:
+            - udagram-frontend/node_modules
+          key: frontend-dependencies
       - run:
           name: e2e test
           command: |
