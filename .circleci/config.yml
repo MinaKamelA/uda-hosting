@@ -58,14 +58,6 @@ jobs:
             - frontend-dependencies{{ checksum "udagram-frontend/package.json" }}
             - frontend-dependencies
       - run:
-         name: Install front-end dependencies
-         command: |
-            npm run frontend:install
-      - save_cache:
-          paths:
-            - udagram-frontend/node_modules
-          key: frontend-dependencies
-      - run:
           name: Test front-end
           command: |
             npm run frontend:test
@@ -82,26 +74,8 @@ jobs:
           keys:
             - frontend-dependencies{{ checksum "udagram-frontend/package.json" }}
             - frontend-dependencies
-      - run:
-         name: Install front-end dependencies
-         command: |
-            npm run frontend:install
-      - save_cache:
-          paths:
-            - udagram-frontend/node_modules
-          key: frontend-dependencies
-      - restore_cache:
-          keys:
             - backend-dependencies{{ checksum "udagram-api/package.json" }}
             - backend-dependencies
-      - run:
-          name: Install back-end dependencies
-          command: |
-            npm run backend:install
-      - save_cache:
-          paths:
-            - udagram-api/node_modules
-          key: backend-dependencies
       - run:
           name: Deploy frontend
           command: |
@@ -112,6 +86,7 @@ jobs:
             cd udagram-api
             eb init udagram-api --platform node.js --region us-east-1
             eb use udagramapi-env
+            eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME POSTGRES_PASSWORD=$POSTGRES_PASSWORD POSTGRES_DB=$POSTGRES_DB DB_PORT=$DB_PORT PORT=$PORT POSTGRES_HOST=$POSTGRES_HOST AWS_REGION=$AWS_DEFAULT_REGION AWS_PROFILE=$AWS_PROFILE AWS_BUCKET=$AWS_BUCKET URL=$URL JWT_SECRET=$JWT_SECRET
       - run:
           name: Deploy backend
           command: |
@@ -129,14 +104,6 @@ jobs:
           keys:
             - frontend-dependencies{{ checksum "udagram-frontend/package.json" }}
             - frontend-dependencies
-      - run:
-         name: Install front-end dependencies
-         command: |
-            npm run frontend:install
-      - save_cache:
-          paths:
-            - udagram-frontend/node_modules
-          key: frontend-dependencies
       - run:
           name: e2e test
           command: |
