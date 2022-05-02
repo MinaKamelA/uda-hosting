@@ -89,6 +89,7 @@ jobs:
       - run:
           name: Deploy frontend
           command: |
+            npm run enter
             cd www
             npm run frontend:deploy
       - run:
