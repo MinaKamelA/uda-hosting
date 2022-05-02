@@ -116,6 +116,8 @@ jobs:
           keys:
             - frontend-dependencies{{ checksum "udagram-frontend/package.json" }}
             - frontend-dependencies
+      - attach_workspace:
+          at: udagram-api
       - run:
           name: Start back-end
           command: |
