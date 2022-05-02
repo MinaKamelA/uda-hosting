@@ -40,10 +40,18 @@ jobs:
          name: Build front-end
          command: |
             npm run frontend:build
+      - persist_to_workspace:
+          root: udagram-frontend
+          paths:
+            - www
       - run:
           name: Build back-end
           command: |
             npm run backend:build
+      - persist_to_workspace:
+          root: udagram-api
+          paths:
+            - www
   test:
     docker:
       - image: 'cimg/base:stable'
