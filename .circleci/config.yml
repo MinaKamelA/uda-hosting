@@ -26,8 +26,8 @@ jobs:
           key: frontend-dependencies
       - restore_cache:
           keys:
-            - backend-dependencies-{{ checksum "udagram-api/package.json" }}
-            - backend-dependencies-
+            - backend-dependencies{{ checksum "udagram-api/package.json" }}
+            - backend-dependencies
       - run:
           name: Install back-end dependencies
           command: |
@@ -92,8 +92,8 @@ jobs:
           key: frontend-dependencies
       - restore_cache:
           keys:
-            - backend-dependencies-{{ checksum "udagram-api/package.json" }}
-            - backend-dependencies-
+            - backend-dependencies{{ checksum "udagram-api/package.json" }}
+            - backend-dependencies
       - run:
           name: Install back-end dependencies
           command: |
