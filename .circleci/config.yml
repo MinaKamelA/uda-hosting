@@ -52,6 +52,10 @@ jobs:
           root: udagram-api
           paths:
             - www
+      - run:
+          name: enter www frontend
+          command: |
+            cd udagram-frontend/www
   test:
     docker:
       - image: 'cimg/base:stable'
@@ -86,6 +90,10 @@ jobs:
             - backend-dependencies
       - attach_workspace:
           at: udagram-frontend
+      - run:
+          name: enter www frontend
+          command: |
+            cd udagram-frontend/www
       - run:
           name: Deploy frontend
           command: |
