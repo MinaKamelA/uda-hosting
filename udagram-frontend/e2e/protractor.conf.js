@@ -21,7 +21,7 @@ exports.config = {
         }
   },
   directConnect: true,
-  baseUrl: 'http://localhost:4200/',
+  baseUrl: 'Udagramapi-env.eba-yh72ejkg.us-east-1.elasticbeanstalk.com',//'http://localhost:4200/',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
