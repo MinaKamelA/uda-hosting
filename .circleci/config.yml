@@ -126,6 +126,7 @@ jobs:
           name: Start back-end
           command: |
             npm run backend:start
+          background: true
       - run:
           name: e2e test
           command: |
