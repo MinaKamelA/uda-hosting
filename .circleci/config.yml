@@ -123,14 +123,11 @@ jobs:
       - attach_workspace:
           at: udagram-api
       - run:
-          name: Start back-end
+          name: Start back-end and run e2e
           command: |
             npm run backend:start
-          background: true
-      - run:
-          name: e2e test
-          command: |
             npm run frontend:e2e
+          # background: true
 workflows:
   version: 2
   udagram:
