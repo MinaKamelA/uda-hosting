@@ -101,33 +101,6 @@ jobs:
           name: Deploy backend
           command: |
             npm run backend:deploy
-  e2e:
-    docker:
-      - image: 'cimg/base:stable'
-    steps:
-      - node/install:
-          node-version: '16.13'
-      - checkout
-      - browser-tools/install-chrome
-      - browser-tools/install-chromedriver
-      - restore_cache:
-          keys:
-            - frontend-dependencies{{ checksum "udagram-frontend/package.json" }}
-            - frontend-dependencies
-            - backend-dependencies{{ checksum "udagram-api/package.json" }}
-            - backend-
-      - restore_cache:
-          keys:
-            - backend-dependencies{{ checksum "udagram-api/package.json" }}
-            - backend-dependencies
-      - attach_workspace:
-          at: udagram-api
-      - run:
-          name: Start back-end and run e2e
-          command: |
-            npm run backend:start
-            npm run frontend:e2e
-          # background: true
 workflows:
   version: 2
   udagram:
@@ -139,6 +112,3 @@ workflows:
       - deploy:
           requires:
             - test
-      - e2e:
-          requires:
-            - deploy
