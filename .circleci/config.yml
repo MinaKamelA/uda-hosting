@@ -127,7 +127,6 @@ jobs:
           command: |
             npm run backend:start
             npm run frontend:e2e
-          # background: true
 workflows:
   version: 2
   udagram:
