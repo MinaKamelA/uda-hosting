@@ -8,6 +8,7 @@
 - [Table of contents](#table-of-contents)
 - [Description](#description)
 - [Getting Started](#getting-started)
+- [App Link](#app-link)
 - [Dependencies](#dependencies)
 - [Frontend Dependencies](#frontend-dependencies)
 - [Backend Dependencies](#baclend-dependencies)
@@ -15,8 +16,6 @@
 - [Testing](#testing)
 - [CI/CD](#ci-cd)
 - [AWS services](#aws-services)
-- [Endpoints](#endpoints)
-- [Database](#database)
 
 ---
 
@@ -32,6 +31,11 @@ This application is provided by Udacity as a starter project to host. The udagra
 1. follow the instructions in the installation step
 
 The project can run but is missing some information to connect to the database and storage service. These will be setup during the course of the project
+
+## App Link
+[(Back to top)](#table-of-contents)
+
+Link for the app: [Udagram](https://udagram-files.s3.us-east-1.amazonaws.com/)
 
 ## Dependencies
 [(Back to top)](#table-of-contents)
@@ -178,6 +182,12 @@ The CI/CD pipeline is as follows:
 [![CircleCI](https://circleci.com/gh/MinaKamelA/uda-hosting/tree/master.svg?style=svg)](https://circleci.com/gh/MinaKamelA/uda-hosting/tree/master)
 
 ### CI/CD screenshot
+
+![CI/CD!](/assets/ci1.png "ci/cd") 
+*CI/CD*
+
+![CI/CD!](/assets/ci2.png "ci/cd") 
+*CI/CD*
 
 ---
 
