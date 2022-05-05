@@ -35,7 +35,7 @@ The project can run but is missing some information to connect to the database a
 ## App Link
 [(Back to top)](#table-of-contents)
 
-Link for the app: [Udagram](https://udagram-files.s3.us-east-1.amazonaws.com/)
+Link for the app: [Udagram](http://udagram-files.s3-website-us-east-1.amazonaws.com)
 
 ## Dependencies
 [(Back to top)](#table-of-contents)
@@ -171,6 +171,8 @@ The CI/CD pipeline is as follows:
 1. Build the application which is required before running the tests.
 2. Run the unit tests in this case frontend tests which is also required before running the deployment.
 3. Deploy the application to production.
+
+###### Note: CI/CD runs on commit or pull request.
 
 ### CI/CD pipeline diagram
 
