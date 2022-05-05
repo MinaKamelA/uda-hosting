@@ -105,6 +105,11 @@ workflows:
   version: 2
   udagram:
     jobs:
+      filters:
+        branches:
+          only:
+            - main
+            - master
       - build
       - test:
           requires:
