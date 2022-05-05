@@ -108,8 +108,8 @@ workflows:
       filters:
         branches:
           only:
-            - main
-            - master
+             main
+             master
       - build
       - test:
           requires:
