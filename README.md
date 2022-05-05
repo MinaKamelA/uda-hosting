@@ -191,6 +191,12 @@ The CI/CD pipeline is as follows:
 ![CI/CD!](/assets/ci2.png "ci/cd") 
 *CI/CD*
 
+![CI/CD!](/assets/ci3.png "ci/cd") 
+*CI/CD*
+
+![CI/CD!](/assets/ci4.png "ci/cd") 
+*CI/CD*
+
 ---
 
 ## AWS services
